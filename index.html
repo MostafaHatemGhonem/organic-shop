@@ -3,10 +3,485 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Organic Store – Fresh, 100% organic vegetables, groceries and juices delivered to your door.">
+    <title>Organic Store – Best Quality Products</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./bootstrap-5.2.1-dist/css/bootstrap.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./style/style.css">
-    <title>Organic Shop</title>
+    <link rel="stylesheet" href="./style/home.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 </head>
 <body>
-    <h1>try</h1>
+
+    <!-- ======================== NAVBAR ======================== -->
+    <nav class="navbar navbar-expand-lg  z-3 py-3 " id="mainNavbar">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <div class="">
+                    <img class="logo-icon d-flex align-items-center justify-content-center" src="./assets/images/organic-store-logo5.svg" alt="">
+                </div>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative " href="./about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative " href="./everything.html">Everything</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative " href="./groceries.html">Groceries</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative " href="./juice.html">Juice</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative " href="./contact.html">Contact</a></li>
+                </ul> 
+
+                <!-- Nav Actions -->
+                <div class="nav-actions d-flex align-items-center gap-3">
+                    <span class="cart-total">£<span id="cartTotal">0.00</span></span>
+                    <button class="btn-cart position-relative cursor-pointer border-0 rounded-circle d-flex align-items-center justify-content-center" id="cartBtn" aria-label="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge position-absolute top-0 start-100 translate-middle text-white rounded-circle fw-bold d-flex align-items-center justify-content-center " id="cartBadge">0</span>
+                    </button>
+                    <button class="btn-user position-relative cursor-pointer border-0 rounded-circle d-flex align-items-center justify-content-center" aria-label="Account">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================== HERO SECTION ======================== -->
+    <section class="hero-section d-flex align-items-center position-relative overflow-hidden " id="home">
+        <!-- Decorative background blobs -->
+        <div class="hero-blob position-absolute rounded-circle opacity-25 pe-none hero-blob-1"></div>
+        <div class="hero-blob position-absolute  rounded-circle opacity-25 pe-none hero-blob-2"></div>
+
+        <div class="container hero-container d-flex align-items-center">
+            <!-- Left: Product Image -->
+            <div class="hero-image-wrap flex-fill position-relative d-flex align-items-center justify-content-center animate-slide-left">
+                <img src="./assets/images/organic-products-hero.png" alt="Organic Products" class="hero-img position-relative object-fit-contain " onerror="this.style.display='none'">
+            </div>
+
+            <!-- Right: Content -->
+            <div class="hero-content animate-slide-right">
+                <div class="hero-badge d-flex align-items-center gap-2 fw-semibold mb-4 ">
+                    <img src="./assets/images/logo-leaf-new.png" alt="">
+                </div>
+                <p class="hero-badge-text">Best Quality Products</p>
+                <h1 class="hero-title fw-bold mb-4">
+                    Join The <span class="text-highlight position-relative">Organic</span><br>Movement!
+                </h1>
+                <p class="hero-desc mb-4">
+                    Discover farm-fresh vegetables, organic groceries and natural juices — delivered straight to your door with love and care.
+                </p>
+                <div class="hero-actions d-flex flex-wrap gap-3 mb-5">
+                    <a href="#products" class="btn-primary-custom
+                     d-flex align-items-center gap-2 text-white py-3 px-5 rounded fw-semibold text-decoration-none border-0 cursor-pointer">
+                        <i class="fas fa-shopping-cart"></i>
+                        Shop Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FEATURES BAR ======================== -->
+    <section class="features-section py-5 text-white">
+        <div class="container">
+            <div class="features-grid ">
+                <div class="feature-item">
+                    <div class="feature-icon"><i aria-hidden="true" class="fas fa-truck"></i></div>
+                    <div class="feature-text">
+                        <h6>Free Shipping</h6>
+                        <p>Above $5 Only</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i aria-hidden="true" class="far fa-address-book"></i></div>
+                    <div class="feature-text">
+                        <h6>Certified Organic</h6>
+                        <p>100% Guarantee</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i aria-hidden="true" class="far fa-money-bill-alt"></i></div>
+                    <div class="feature-text">
+                        <h6>Huge Savings</h6>
+                        <p>At Lowest Price</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i aria-hidden="true" class="fas fa-recycle"></i></div>
+                    <div class="feature-text">
+                        <h6>Easy Returns</h6>
+                        <p>No Questions Asked</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CATEGORIES SECTION ======================== -->
+    <section class="categories-section bg-white py-5 d-flex align-items-center justify-content-center" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h5 class="section-title">Best Selling Products</h5>
+                <img src="./assets/images/logo-leaf-new.png" alt="">
+            </div>
+            <div class="best-products-grid">
+                <!-- Card 1 -->
+                <div class="best-product-card">
+                    <div class="best-product-img-wrap">
+                        <img src="./assets/images/coffee-asorted-300x300.jpg" alt="Assorted Coffee">
+                    </div>
+                    <div class="best-product-info">
+                        <span class="best-product-category">Groceries</span>
+                        <h6 class="best-product-name">Assorted Coffee</h6>
+                        <span class="best-product-price">£35.00</span>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="best-product-card">
+                    <div class="best-product-img-wrap">
+                        <img src="./assets/images/sanitizer-300x300.jpg" alt="Hand Sanitizer">
+                    </div>
+                    <div class="best-product-info">
+                        <span class="best-product-category">Groceries</span>
+                        <h6 class="best-product-name">Hand Sanitizer</h6>
+                        <span class="best-product-price">£15.00</span>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="best-product-card">
+                    <div class="best-product-img-wrap">
+                        <img src="./assets/images/red-chillies-300x300.jpg" alt="Handpicked Red Chillies">
+                    </div>
+                    <div class="best-product-info">
+                        <span class="best-product-category">Groceries</span>
+                        <h6 class="best-product-name">Handpicked Red Chillies</h6>
+                        <span class="best-product-price">£19.00</span>
+                    </div>
+                </div>
+                <!-- Card 4 – Sale -->
+                <div class="best-product-card">
+                    <span class="best-product-badge rounded-pill">Sale!</span>
+                    <div class="best-product-img-wrap">
+                        <img src="./assets/images/edible-oil-300x300.jpg" alt="Natural Extracted Edible Oil">
+                    </div>
+                    <div class="best-product-info">
+                        <span class="best-product-category">Groceries</span>
+                        <h6 class="best-product-name">Natural Extracted Edible Oil</h6>
+                        <div class="best-product-pricing">
+                            <span class="best-product-price-old">£34.00</span>
+                            <span class="best-product-price">£25.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CATEGORY CARDS SECTION ======================== -->
+    <section class="category-cards-section" id="category-cards">
+        <div class="leaf-decoration">
+            <img loading="lazy" decoding="async" src="./assets/images/basil-leaf.png" alt="">
+        </div>
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="category-card">
+                        <div class="card-text-content">
+                            <h3 class="card-title-serif">Farm Fresh Fruits</h3>
+                            <p class="card-desc">Ut sollicitudin quam vel purus tempus, vel eleifend felis varius.</p>
+                            <a href="#" class="btn-brand">
+                                Shop Now <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <img src="./assets/images/product11-free-img.jpg" alt="Farm Fresh Fruits" class="card-img-custom">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="category-card">
+                        <div class="card-text-content">
+                            <h3 class="card-title-serif">Fresh Vegetables</h3>
+                            <p class="card-desc">Aliquam porta justo nibh, id laoreet sapien sodales vitae justo.</p>
+                            <a href="#" class="btn-brand">
+                                Shop Now <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <img src="./assets/images/product13-free-img.jpg" alt="Fresh Vegetables" class="card-img-custom">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="category-card">
+                        <div class="card-text-content">
+                            <h3 class="card-title-serif">Organic Legume</h3>
+                            <p class="card-desc">Phasellus sed urna mattis, viverra libero sed, aliquam est.</p>
+                            <a href="#" class="btn-brand">
+                                Shop Now <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <img src="./assets/images/product17-free-img.jpg" alt="Organic Legume" class="card-img-custom">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== PROMO BANNER ======================== -->
+    <section class="promo-banner position-relative">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <h2 class="promo-title">Get 25% Off On Your First Purchase!</h2>
+            <a href="#" class="btn-brand promo-btn">
+                <i class="fas fa-shopping-cart"></i> Shop Now
+            </a>
+        </div>
+        <div class="before-banner bg-black   position-absolute bottom-0 start-50"></div>
+    </section>
+
+    <!-- ======================== qoot SECTION ======================== -->
+    <div class="qoot ">
+        Try It For Free. No Registration Needed.
+    </div>
+
+    <!-- ======================== TRENDING SECTION ======================== -->
+    <section class="trending bg-white">
+        <div class="container">
+            <div class="section-header">
+                <h5 class="section-title">Trending Products</h5>
+                <img src="./assets/images/logo-leaf-new.png" alt="">
+            </div>
+            <div class="trending-grid">
+
+                <!-- Card 1 -->
+                <div class="trending-product-card">
+                    <div class="trending-product-img-wrap">
+                        <img src="./assets/images/coffee-asorted-300x300.jpg" alt="Assorted Coffee">
+
+                    </div>
+                    <div class="trending-product-info">
+                        <span class="trending-product-category">Groceries</span>
+                        <h6 class="trending-product-name">Assorted Coffee</h6>
+                        <span class="trending-product-price">£35.00</span>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="trending-product-card">
+                    <div class="trending-product-img-wrap">
+                        <img src="./assets/images/orage-juice-kariz-300x300.jpg" alt="Fresh Orange Juice">
+                    </div>
+                    <div class="trending-product-info">
+                        <span class="trending-product-category">Juice</span>
+                        <h6 class="trending-product-name">Fresh Orange Juice</h6>
+                        <span class="trending-product-price">£18.00</span>
+                    </div>
+                </div>
+
+
+                <!-- Card 3 -->
+                <div class="trending-product-card">
+                    <div class="trending-product-img-wrap">
+                        <img src="./assets/images/sanitizer-300x300.jpg" alt="Natural Extracted Edible Oil">
+
+                    </div>
+                    <div class="trending-product-info">
+                        <span class="trending-product-category">Groceries</span>
+                        <h6 class="trending-product-name">Natural Extracted Edible Oil</h6>
+                        <div class="trending-product-pricing">
+                            <span class="trending-product-price-old">£34.00</span>
+                            <span class="trending-product-price">£25.00</span>
+                        </div>
+                    </div>
+                </div>    
+                <div class="trending-product-card">
+                    <div class="trending-product-img-wrap">
+                        <img src="./assets/images/red-chillies-300x300.jpg" alt="Handpicked Red Chillies">
+
+                    </div>
+                    <div class="trending-product-info">
+                        <span class="trending-product-category">Groceries</span>
+                        <h6 class="trending-product-name">Handpicked Red Chillies</h6>
+                        <span class="trending-product-price">£19.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reviews-section py-5 position-relative overflow-hidden">
+        
+            <div class="container text-center">
+        
+                <!-- Title -->
+                <h2 class="fw-bold mb-3">Customers Reviews</h2>
+                <img src="assets/images/leaf-small.png" width="40" class="mb-5" alt="">
+        
+                <!-- Reviews Row -->
+                <div class="row align-items-center g-4">
+        
+                    <!-- Left Review -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm p-4 h-100">
+                            <div class="text-warning  mb-3">
+                                ★★★★★
+                            </div>
+                            <p class="text-muted">
+                                Click edit button to change this text. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                                mattis, pulvinar dapibus leo.
+                            </p>
+        
+                            <div class="d-flex align-items-center justify-content-center gap-3 mt-3">
+                                <img src="assets/images/client02-free-img.png" class="rounded-circle" width="45" height="45" alt="">
+                                <span class="fw-medium">Mila Kunis</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Middle Offer Card -->
+                    <div class="col-lg-4">
+                        <div
+                            class="offer-card text-white d-flex flex-column justify-content-center align-items-center text-center p-4">
+                            <h3 class="fw-bold mb-3">Deal Of The Day<br>15% Off On All Vegetables!</h3>
+                            <p class="mb-4">I am text block. Click edit button to change this text em ips.</p>
+                            <a href="#" class="btn btn-success px-4 fw-semibold">
+                                SHOP NOW →
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Right Review -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm p-4 h-100">
+                            <div class="text-warning mb-3">
+                                ★★★★★
+                            </div>
+                            <p class="text-muted">
+                                Click edit button to change this text. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                                mattis, pulvinar dapibus leo.
+                            </p>
+        
+                            <div class="d-flex align-items-center justify-content-center gap-3 mt-3">
+                                <img src="assets/images/client01-free-img.png" class="rounded-circle" width="45" height="45" alt="">
+                                <span class="fw-medium">Mike Sendler</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Featured Brands -->
+                <div class="mt-5 pt-4">
+                    <div class="row align-items-center text-center d-flex ">
+                        <div class="col fw-semibold text-start fs-5">Featured Brands:</div>
+                        <div class="col"><img src="./assets/images/1-copy.svg" alt=""></div>
+                        <div class="col"><img src="./assets/images/1-copy-2.svg" alt=""></div>
+                        <div class="col"><img src="./assets/images/1-copy-3.svg" alt=""></div>
+                        <div class="col"><img src="./assets/images/1-copy-4.svg" alt=""></div>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+    </section>
+    <!-- ======================== FOOTER ======================== -->
+
+
+<footer class="footer-dark text-white pt-5">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Brand -->
+            <div class="col-lg-4">
+                <a href="#" class="d-inline-block mb-3 text-decoration-none">
+                    <img src="assets/images/organic-store-white-logo.png" alt="Organic Store" style="height:70px;">
+                </a>
+
+                <p class="footer-desc mb-0">
+                    Maecenas mi justo,<br>
+                    interdum at consectetur<br>
+                    vel, tristique et arcu.
+                </p>
+            </div>
+
+            <!-- Website -->
+            <div class="col-6 col-lg-2">
+                <h6 class="footer-title mb-3">Website</h6>
+                <ul class="list-unstyled footer-links mb-0">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Everything</a></li>
+                    <li><a href="#">Groceries</a></li>
+                    <li><a href="#">Juice</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-6 col-lg-3">
+                <h6 class="footer-title mb-3">Quick Links</h6>
+                <ul class="list-unstyled footer-links mb-0">
+                    <li><a href="#">Know More About Us</a></li>
+                    <li><a href="#">Visit Store</a></li>
+                    <li><a href="#">Let’s Connect</a></li>
+                    <li><a href="#">Locate Stores</a></li>
+                </ul>
+            </div>
+
+            <!-- Site Links -->
+            <div class="col-6 col-lg-3">
+                <h6 class="footer-title mb-3">Site Links</h6>
+                <ul class="list-unstyled footer-links mb-0">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Shipping Details</a></li>
+                    <li><a href="#">Offers Coupons</a></li>
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Divider -->
+        <hr class="footer-divider my-5">
+
+        <!-- Bottom bar -->
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between pb-4 gap-3">
+            <div class="small text-white-50">
+                Copyright © 2026 | Organic Store
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <!-- استخدم Bootstrap Icons أو FontAwesome -->
+                <a class="footer-social" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a class="footer-social" href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a class="footer-social" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="./bootstrap-5.2.1-dist/js/bootstrap.js"></script>
+    <!-- Main JS -->
+    <script src="./js/main.js"></script>
 </body>
 </html>
