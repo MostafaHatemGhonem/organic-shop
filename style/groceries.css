@@ -1,0 +1,145 @@
+/* ---- Reset & Base ---- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Brand Colors */
+    --green-primary: #4a8c3f;
+    --green-light: #6cbf5c;
+    --green-pale: #e8f5e4;
+    --green-accent: #8bc34a;
+
+    /* BackGround Colors */
+    --bg-primary: rgba(255, 255, 255, 0.92);
+    --bg-secondary: #111111;
+
+    /* Neutrals */
+    --text-dark: #1a1a2e;
+    --text-mid: #4a5568;
+    --text-light: #9eaab8;
+    --bg-cream: #f8f6f2;
+    --bg-white: #ffffff;
+    --border-light: #e8ede8;
+
+    /* Utility */
+    --shadow-sm: 0 2px 8px rgba(74, 140, 63, 0.08);
+    --shadow-md: 0 8px 30px rgba(74, 140, 63, 0.14);
+    --shadow-lg: 0 16px 50px rgba(74, 140, 63, 0.18);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.sidebar-widget {
+    max-width: 320px;
+}
+
+.heading-serif {
+    font-family: 'Georgia', serif;
+    color: #000;
+}
+
+.btn-custom-green {
+    background-color: #6A9641;
+    color: white;
+    border: none;
+}
+
+.btn-custom-green:hover {
+    background-color: #5a8235;
+    color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* --- Dual Range Slider Mechanics --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background-color: #D3D3D3;
+    border-radius: 4px;
+    margin: 30px 0;
+}
+
+.slider-track {
+    position: absolute;
+    height: 100%;
+    background-color: #8CC63F;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.slider-container input[type="range"] {
+    position: absolute;
+    width: 100%;
+    top: -7px;
+    -webkit-appearance: none;
+    appearance: none;
+    pointer-events: none;
+    background: transparent;
+    z-index: 2;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: auto;
+    width: 18px;
+    height: 18px;
+    background-color: #8CC63F;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-container input[type="range"]::-moz-range-thumb {
+    pointer-events: auto;
+    width: 18px;
+    height: 18px;
+    background-color: #8CC63F;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* --- Products Page Grid --- */
+.products-header h1 {
+    color: #8bc34a !important; /* The specific light green from the design */
+}
+
+.product-card {
+    border: none;
+    background: transparent;
+}
+
+.product-card .product-img-wrap {
+    background-color: #f8f6f2 !important; /* Match the cream background of images */
+    overflow: hidden;
+    padding: 2.5rem; /* Add padding to match reference image spacing */
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.product-price {
+    font-weight: 700;
+    color: #333;
+}
+
+.products-toolbar select:focus {
+    box-shadow: none;
+    outline: none;
+}

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap-5.2.1-dist/css/bootstrap.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/groceries.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+    <!-- ======================== NAVBAR ======================== -->
+    <nav class="navbar navbar-expand-lg  z-3 py-3 " id="mainNavbar">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <div class="">
+                    <img class="logo-icon d-flex align-items-center justify-content-center"
+                        src="../assets/images/organic-store-logo5.svg" alt="">
+                </div>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative "
+                            href="/pages/about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative "
+                            href="/pages/everything.html">Everything</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative "
+                            href="/pages/groceries.html">Groceries</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative "
+                            href="/pages/juice.html">Juice</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative "
+                            href="/pages/contact.html">Contact</a></li>
+                </ul>
+
+                <!-- Nav Actions -->
+                <div class="nav-actions d-flex align-items-center gap-3">
+                    <span class="cart-total">£<span id="cartTotal">0.00</span></span>
+                    <button
+                        class="btn-cart position-relative cursor-pointer border-0 rounded-circle d-flex align-items-center justify-content-center"
+                        id="cartBtn" aria-label="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span
+                            class="cart-badge position-absolute top-0 start-100 translate-middle text-white rounded-circle fw-bold d-flex align-items-center justify-content-center "
+                            id="cartBadge">0</span>
+                    </button>
+                    <button
+                        class="btn-user position-relative cursor-pointer border-0 rounded-circle d-flex align-items-center justify-content-center"
+                        aria-label="Account">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-groceries py-4 container mt-4">
+        <div class="row g-4">
+            <div class="sidebar col-12 col-lg-3 border-end order-2 order-lg-1">
+                <div class="sidebar-widget pe-4">
+                
+                    <div class="input-group mb-5">
+                        <input type="text" class="form-control rounded-0" placeholder="Search products...">
+                        <button class="btn btn-custom-green rounded-0 px-3" type="button">&#10095;</button>
+                    </div>
+                
+                    <div class="mb-5 position-relative" id="active-filters-section">
+                        <h3 class="heading-serif fs-4 mb-3">Active filters</h3>
+                        <span class="d-block text-uppercase fw-bold mb-3"
+                            style="font-size: 11px; letter-spacing: 1px; color: #333;">Price:</span>
+                    
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="d-inline-flex align-items-center" id="price-tag">
+                                <button
+                                    class="btn btn-light rounded-circle d-flex align-items-center justify-content-center me-2 p-0 shadow-sm"
+                                    style="width: 20px; height: 20px; font-size: 14px;" onclick="removeFilterTag()">&#215;</button>
+                                <span class="text-dark" style="font-size: 14px;">From £<span id="tag-min">15</span>.00</span>
+                            </div>
+                            <a href="#" class="text-dark text-decoration-underline"
+                                style="font-size: 14px; position: absolute; right: 0; bottom: 0;" onclick="clearAllFilters(event)">Clear
+                                All</a>
+                        </div>
+                    </div>
+                
+                    <div>
+                        <h3 class="heading-serif fs-4 mb-4">Filter by price</h3>
+                    
+                        <div class="slider-container">
+                            <div class="slider-track" id="slider-track"></div>
+                            <input type="range" min="15" max="35" value="15" id="slider-1" oninput="slideOne()">
+                            <input type="range" min="15" max="35" value="35" id="slider-2" oninput="slideTwo()">
+                        </div>
+                    
+                        <div class="d-flex justify-content-end gap-2 mb-4">
+                            <div class="text-center">
+                                <div class="input-group input-group-sm mb-1" style="width: 65px; border: 1px solid #999;">
+                                    <span class="input-group-text bg-white border-0 text-muted px-2" style="font-size: 13px;">£</span>
+                                    <input type="number" class="form-control border-0 text-end px-1 text-muted shadow-none" id="num-1"
+                                        value="15" min="15" max="35" oninput="inputOne()">
+                                </div>
+                                <label class="text-muted" style="font-size: 12px;">Min. Price</label>
+                            </div>
+                        
+                            <div class="text-center">
+                                <div class="input-group input-group-sm mb-1" style="width: 65px; border: 1px solid #999;">
+                                    <span class="input-group-text bg-white border-0 text-muted px-2" style="font-size: 13px;">£</span>
+                                    <input type="number" class="form-control border-0 text-end px-1 text-muted shadow-none" id="num-2"
+                                        value="35" min="15" max="35" oninput="inputTwo()">
+                                </div>
+                                <label class="text-muted" style="font-size: 12px;">Max. Price</label>
+                            </div>
+                        </div>
+                    
+                        <button class="btn btn-custom-green px-4 fw-semibold float-end rounded-1" style="letter-spacing: 0.5px;"
+                            onclick="resetFilters()">RESET</button>
+                    </div>
+                
+                    <div class="sidebar-categories mt-5 pt-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-3">
+                                <a href="#" class="text-success text-decoration-none fs-5">Groceries</a>
+                                <span class="text-dark fs-5">(10)</span>
+                            </li>
+                            <li class="mb-3">
+                                <a href="#" class="text-success text-decoration-none fs-5">Juice</a>
+                                <span class="text-dark fs-5">(9)</span>
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <div class="sidebar-products mt-4 pt-2">
+                        <!-- Product 1 -->
+                        <div class="sidebar-product-card mb-4 pb-2">
+                            <div class="position-relative mb-2 bg-light text-center p-3" style="background-color: #f8f6f2 !important;">
+                                <span class="position-absolute rounded-circle d-flex align-items-center justify-content-center bg-white border border-secondary" style="top: 10px; right: 10px; width: 40px; height: 40px; font-size: 11px;">Sale</span>
+                                <img src="../assets/images/edible-oil-300x300.jpg" alt="Natural Extracted Edible Oil" class="img-fluid sidebar-product-img" style="max-height: 250px; object-fit: contain;">
+                            </div>
+                            <h6 class="text-success mb-1 fs-6">Natural Extracted Edible Oil</h6>
+                            <div class="sidebar-product-price">
+                                <span class="text-muted text-decoration-line-through me-1">£34.00</span>
+                                <span class="text-dark">£25.00</span>
+                            </div>
+                        </div>
+                
+                        <!-- Product 2 -->
+                        <div class="sidebar-product-card mb-4 pb-2">
+                            <div class="position-relative mb-2 bg-light text-center p-3" style="background-color: #f8f6f2 !important;">
+                                <img src="../assets/images/coffee-asorted-300x300.jpg" alt="Assorted Coffee" class="img-fluid sidebar-product-img" style="mix-blend-mode: multiply; max-height: 250px; object-fit: contain;">
+                            </div>
+                            <h6 class="text-success mb-1 fs-6">Assorted Coffee</h6>
+                            <div class="sidebar-product-price">
+                                <span class="text-dark">£35.00</span>
+                            </div>
+                        </div>
+                
+                        <!-- Product 3 -->
+                        <div class="sidebar-product-card mb-4 pb-2">
+                            <div class="position-relative mb-2 bg-light text-center p-3" style="background-color: #f8f6f2 !important;">
+                                <img src="../assets/images/sanitizer-300x300.jpg" alt="Hand Sanitizer" class="img-fluid sidebar-product-img" style="mix-blend-mode: multiply; max-height: 250px; object-fit: contain;">
+                            </div>
+                            <h6 class="text-success mb-1 fs-6">Hand Sanitizer</h6>
+                            <div class="sidebar-product-price">
+                                <span class="text-dark">£15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products col-12 col-lg-9 order-1 order-lg-2">
+                
+                <!-- Page Header (Breadcrumbs, Title, Desc) -->
+                <div class="products-header mb-4 p-5">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb" style="font-size: 14px;">
+                            <li class="breadcrumb-item"><a href="/" class="text-muted text-decoration-none">Home</a></li>
+                            <li class="breadcrumb-item active text-muted" aria-current="page">Groceries</li>
+                        </ol>
+                    </nav>
+                    <h1 class="text-custom-green fw-bold mb-4" style="font-size: 3rem; font-family: 'Poppins', sans-serif;">Groceries</h1>
+                    <p class="text-muted mb-0" style="font-size: 15px; line-height: 1.8; max-width: 900px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim, velit et luctus interdum, est quam scelerisque tellus, eget luctus mi diam vitae erat. Praesent porttitor lacus vitae dictum posuere. Suspendisse elementum metus ac dolor tincidunt, eu imperdiet nisi dictum.
+                    </p>
+                </div>
+                
+                <div class="products-toolbar d-flex flex-wrap justify-content-between align-items-center mb-5 pb-3">
+                    <p class="text-muted mb-0 p-5" style="font-size: 14px;">Showing all 7 results</p>
+                    <form class="d-flex align-items-center">
+                        <select class="form-select border-0 text-muted bg-transparent shadow-none pe-4 cursor-pointer" aria-label="Default sorting" style="font-size: 14px; width: auto;">
+                            <option selected>Default sorting</option>
+                            <option value="popularity">Sort by popularity</option>
+                            <option value="rating">Sort by average rating</option>
+                            <option value="date">Sort by latest</option>
+                            <option value="price">Sort by price: low to high</option>
+                            <option value="price-desc">Sort by price: high to low</option>
+                        </select>
+                    </form>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    
+                    <!-- Product 1 -->
+                    <div class="col">
+                        <div class="product-card text-center h-100">
+                            <div class="product-img-wrap position-relative mb-3 bg-light d-flex align-items-center justify-content-center" style="height: 250px;">
+                                <img src="../assets/images/coffee-asorted-300x300.jpg" alt="Assorted Coffee" class="img-fluid object-fit-contain" style="mix-blend-mode: multiply;">
+                            </div>
+                            <div class="product-info">
+                                <span class="d-block text-muted mb-1" style="font-size: 12px; font-weight: 500;">Groceries</span>
+                                <h6 class="product-title fw-bold text-dark mb-2" style="font-size: 15px;">Assorted Coffee</h6>
+                                <div class="product-price fw-bold text-dark" style="font-size: 14px;">
+                                    £35.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Product 2 -->
+                    <div class="col">
+                        <div class="product-card text-center h-100">
+                            <div class="product-img-wrap position-relative mb-3 bg-light d-flex align-items-center justify-content-center" style="height: 250px;">
+                                <span class="position-absolute d-flex align-items-center justify-content-center text-white lh-1 shadow-sm rounded-circle" style="top: 15px; right: 15px; width: 45px; height: 45px; font-size: 13px; background-color: #8bc34a; z-index: 2;">Sale!</span>
+                                <img src="../assets/images/cashew-butter-500-300x300.jpg" alt="Cashew Butter" class="img-fluid object-fit-contain" style="mix-blend-mode: multiply;" onerror="this.src='../assets/images/organic-store-logo5.svg'">
+                            </div>
+                            <div class="product-info">
+                                <span class="d-block text-muted mb-1" style="font-size: 13px;">Groceries</span>
+                                <h6 class="product-title fw-bold text-dark mb-2" style="font-size: 16px;">Cashew Butter</h6>
+                                <div class="product-price fw-bold text-dark" style="font-size: 15px;">
+                                    <span class="text-muted text-decoration-line-through fw-normal me-2">£35.00</span>£25.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Product 3 -->
+                    <div class="col">
+                        <div class="product-card text-center h-100">
+                            <div class="product-img-wrap position-relative mb-3 bg-light d-flex align-items-center justify-content-center" style="height: 250px;">
+                                <span class="position-absolute d-flex align-items-center justify-content-center text-white lh-1 shadow-sm rounded-circle" style="top: 15px; right: 15px; width: 45px; height: 45px; font-size: 13px; background-color: #8bc34a; z-index: 2;">Sale!</span>
+                                <img src="../assets/images/diabetic-cookies-300x300.jpg" alt="Diabetic Cookies" class="img-fluid object-fit-contain" style="mix-blend-mode: multiply;" onerror="this.src='../assets/images/organic-store-logo5.svg'">
+                            </div>
+                            <div class="product-info">
+                                <span class="d-block text-muted mb-1" style="font-size: 13px;">Groceries</span>
+                                <h6 class="product-title fw-bold text-dark mb-2" style="font-size: 16px;">Diabetic Cookies</h6>
+                                <div class="product-price fw-bold text-dark" style="font-size: 15px;">
+                                    <span class="text-muted text-decoration-line-through fw-normal me-2">£35.00</span>£25.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Product 4 -->
+                    <div class="col">
+                        <div class="product-card text-center h-100">
+                            <div class="product-img-wrap position-relative mb-3 bg-light d-flex align-items-center justify-content-center" style="height: 250px;">
+                                <img src="../assets/images/organic-honey-300x300.jpg" alt="Fresh Organic Honey" class="img-fluid object-fit-contain" style="mix-blend-mode: multiply;" onerror="this.src='../assets/images/organic-store-logo5.svg'">
+                            </div>
+                            <div class="product-info">
+                                <span class="d-block text-muted mb-1" style="font-size: 13px;">Groceries</span>
+                                <h6 class="product-title fw-bold text-dark mb-2" style="font-size: 16px;">Fresh Organic Honey</h6>
+                                <div class="product-price fw-bold text-dark" style="font-size: 15px;">
+                                    £34.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Product 5 -->
+                    <div class="col">
+                        <div class="product-card text-center h-100">
+                            <div class="product-img-wrap position-relative mb-3 bg-light d-flex align-items-center justify-content-center" style="height: 250px;">
+                                <span class="position-absolute d-flex align-items-center justify-content-center text-white lh-1 shadow-sm rounded-circle" style="top: 15px; right: 15px; width: 45px; height: 45px; font-size: 13px; background-color: #8bc34a; z-index: 2;">Sale!</span>
+                                <img src="../assets/images/edible-oil-300x300.jpg" alt="Natural Extracted Edible Oil" class="img-fluid object-fit-contain" style="mix-blend-mode: multiply;">
+                            </div>
+                            <div class="product-info">
+                                <span class="d-block text-muted mb-1" style="font-size: 13px;">Groceries</span>
+                                <h6 class="product-title fw-bold text-dark mb-2" style="font-size: 16px;">Natural Extracted Edible Oil</h6>
+                                <div class="product-price fw-bold text-dark" style="font-size: 15px;">
+                                    <span class="text-muted text-decoration-line-through fw-normal me-2">£34.00</span>£25.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Product 6 -->
+                    <div class="col">
+                        <div class="product-card text-center h-100">
+                            <div class="product-img-wrap position-relative mb-3 bg-light d-flex align-items-center justify-content-center" style="height: 250px;">
+                                <img src="../assets/images/face-wash-300x300.jpg" alt="Organic Face Scrub" class="img-fluid object-fit-contain" style="mix-blend-mode: multiply;" onerror="this.src='../assets/images/organic-store-logo5.svg'">
+                            </div>
+                            <div class="product-info">
+                                <span class="d-block text-muted mb-1" style="font-size: 13px;">Groceries</span>
+                                <h6 class="product-title fw-bold text-dark mb-2" style="font-size: 16px;">Organic Face Scrub</h6>
+                                <div class="product-price fw-bold text-dark" style="font-size: 15px;">
+                                    £35.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Product 7 -->
+                    <div class="col">
+                        <div class="product-card text-center h-100">
+                            <div class="product-img-wrap position-relative mb-3 bg-light d-flex align-items-center justify-content-center" style="height: 250px;">
+                                <img src="../assets/images/wheat-300x300.jpg" alt="Wheat From Organic Farms" class="img-fluid object-fit-contain" style="mix-blend-mode: multiply;" onerror="this.src='../assets/images/organic-store-logo5.svg'">
+                            </div>
+                            <div class="product-info">
+                                <span class="d-block text-muted mb-1" style="font-size: 13px;">Groceries</span>
+                                <h6 class="product-title fw-bold text-dark mb-2" style="font-size: 16px;">Wheat From Organic Farms</h6>
+                                <div class="product-price fw-bold text-dark" style="font-size: 15px;">
+                                    £34.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer-dark text-white pt-5">
+        <div class="container">
+            <div class="row gy-4">
+
+                <!-- Brand -->
+                <div class="col-lg-4">
+                    <a href="#" class="d-inline-block mb-3 text-decoration-none">
+                        <img src="../assets/images/organic-store-white-logo.png" alt="Organic Store"
+                            style="height:70px;">
+                    </a>
+
+                    <p class="footer-desc mb-0">
+                        Maecenas mi justo,<br>
+                        interdum at consectetur<br>
+                        vel, tristique et arcu.
+                    </p>
+                </div>
+
+                <!-- Website -->
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title mb-3">Website</h6>
+                    <ul class="list-unstyled footer-links mb-0">
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./everything.html">Everything</a></li>
+                        <li><a href="./groceries.html">Groceries</a></li>
+                        <li><a href="./juice.html">Juice</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-6 col-lg-3">
+                    <h6 class="footer-title mb-3">Quick Links</h6>
+                    <ul class="list-unstyled footer-links mb-0">
+                        <li><a href="#">Know More About Us</a></li>
+                        <li><a href="#">Visit Store</a></li>
+                        <li><a href="#">Let’s Connect</a></li>
+                        <li><a href="#">Locate Stores</a></li>
+                    </ul>
+                </div>
+
+                <!-- Site Links -->
+                <div class="col-6 col-lg-3">
+                    <h6 class="footer-title mb-3">Site Links</h6>
+                    <ul class="list-unstyled footer-links mb-0">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Shipping Details</a></li>
+                        <li><a href="#">Offers Coupons</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Divider -->
+            <hr class="footer-divider my-5">
+
+            <!-- Bottom bar -->
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between pb-4 gap-3">
+                <div class="small text-white-50">
+                    Copyright © 2026 | Organic Store
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <a class="footer-social" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a class="footer-social" href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a class="footer-social" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./bootstrap-5.2.1-dist/js/bootstrap.js"></script>
+
+    <script src="../scripts/groceries.js"></script>
+</body>
+
+</html>
