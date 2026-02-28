@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="product-card mb-4 text-center">
                     <div class="product-img-wrapper position-relative">
                         ${p.sale ? '<span class="sale-badge sale-badge-green">Sale!</span>' : ""}
-                        <img src="../resources/${p.img}" class="img-fluid main-prod-img">
+                        <img src="../assets/images/${p.img}" class="img-fluid main-prod-img">
                     </div>
                     <p class="text-muted mb-1 mt-2" style="font-size: 0.7rem;">${p.cat}</p>
                     <a href="#" class="text-dark text-decoration-none d-block fw-bold mb-1" style="font-size: 0.85rem; line-height: 1.2;">${p.name}</a>
