@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap-5.2.1-dist/css/bootstrap.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style/style.css">
+    
+    <link rel="stylesheet" href="../style/contact.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+        <!-- ======================== NAVBAR ======================== -->
+        <nav class="navbar navbar-expand-lg  z-3 py-3 " id="mainNavbar">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+                    <div class="">
+                        <img class="logo-icon d-flex align-items-center justify-content-center"
+                            src="../assets/images/organic-store-logo5.svg" alt="">
+                    </div>
+                </a>
+        
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <!-- Nav Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-1">
+                        <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative "
+                                href="../pages/about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative "
+                                href="../pages/everything.html">Everything</a></li>
+                        <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative "
+                                href="../pages/groceries.html">Groceries</a></li>
+                        <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative "
+                                href="../pages/juice.html">Juice</a></li>
+                        <li class="nav-item"><a class="nav-link fw-medium py-2 px-3 rounded position-relative "
+                                href="../pages/contact.html">Contact</a></li>
+                    </ul>
+        
+                    <!-- Nav Actions -->
+                    <div class="nav-actions d-flex align-items-center gap-3">
+                        <span class="cart-total">£<span id="cartTotal">0.00</span></span>
+                        <button
+                            class="btn-cart position-relative cursor-pointer border-0 rounded-circle d-flex align-items-center justify-content-center"
+                            id="cartBtn" aria-label="Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span
+                                class="cart-badge position-absolute top-0 start-100 translate-middle text-white rounded-circle fw-bold d-flex align-items-center justify-content-center "
+                                id="cartBadge">0</span>
+                        </button>
+                        <button
+                            class="btn-user position-relative cursor-pointer border-0 rounded-circle d-flex align-items-center justify-content-center"
+                            aria-label="Account">
+                            <i class="fas fa-user"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ======================== CONTACT SECTION ======================== -->
+        <section class="contact-header text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold">Get In Touch</h1>
+            </div>
+        </section>
+
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="contact-cards-wrapper bg-white px-4 py-5 p-lg-5">
+                    <div class="leaf-icon-wrapper">
+                        <img src="../assets/images/basil-leaf.png" alt="Leaf" class="leaf-img">
+                    </div>
+                    <div class="row g-4 text-center">
+                        <!-- Phone -->
+                        <div class="col-md-4">
+                            <div class="contact-card h-100 border">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <p class="mb-1">+123 456 7890</p>
+                                <p class="mb-0">+123 456 7890</p>
+                            </div>
+                        </div>
+                        <!-- Email -->
+                        <div class="col-md-4">
+                            <div class="contact-card h-100 border">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <p class="mb-1">info@example.com</p>
+                                <p class="mb-0">support@example.com</p>
+                            </div>
+                        </div>
+                        <!-- Location -->
+                        <div class="col-md-4">
+                            <div class="contact-card h-100 border">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <p class="mb-1">1569 Ave, New York,</p>
+                                <p class="mb-0">NY 10028, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== FAQ SECTION ======================== -->
+        <section class="faq-section position-relative py-5 mt-4" style="overflow: hidden;">
+            <!-- Background Image -->
+            <div class="faq-bg-image position-absolute pe-none z-0">
+                <img src="../assets/images/logo-leaf2-free-img.png" alt="Background Leaf" class="opacity-25" style="transform: scale(3.5) rotate(45deg);">
+            </div>
+
+            <div class="container py-5 position-relative z-1">
+                <div class="text-center mb-5 pb-3">
+                    <h2 class="display-6 fw-bold mb-3" style="font-family: 'Poppins', sans-serif; color: #1a1a1a;">Frequently Asked Question!</h2>
+                    <img src="../assets/images/logo-leaf-new.png" alt="Leaf separator" style="height: 14px; opacity: 0.8;">
+                </div>
+
+                <div class="row gx-lg-5">
+                    <!-- Left Column -->
+                    <div class="col-lg-6">
+                        <div class="accordion accordion-flush custom-accordion" id="faqLeft">
+                            <!-- FAQ Item 1 -->
+                            <div class="accordion-item bg-transparent border-0 border-bottom mb-3 pb-2">
+                                <h2 class="accordion-header" id="headingOneLeft">
+                                    <button class="accordion-button bg-transparent px-0 text-dark fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneLeft" aria-expanded="true" aria-controls="collapseOneLeft">
+                                        Pulvinar nostrud class cum facilis?
+                                    </button>
+                                </h2>
+                                <div id="collapseOneLeft" class="accordion-collapse collapse show" aria-labelledby="headingOneLeft" data-bs-parent="#faqLeft">
+                                    <div class="accordion-body px-0 text-muted">
+                                        I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 2 -->
+                            <div class="accordion-item bg-transparent border-0 border-bottom mb-3 pb-2">
+                                <h2 class="accordion-header" id="headingTwoLeft">
+                                    <button class="accordion-button bg-transparent px-0 text-dark fw-bold shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoLeft" aria-expanded="false" aria-controls="collapseTwoLeft">
+                                        Pon excepturi numquam, facilis?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwoLeft" class="accordion-collapse collapse" aria-labelledby="headingTwoLeft" data-bs-parent="#faqLeft">
+                                    <div class="accordion-body px-0 text-muted">
+                                        I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 3 -->
+                            <div class="accordion-item bg-transparent border-0 border-bottom mb-3 pb-2">
+                                <h2 class="accordion-header" id="headingThreeLeft">
+                                    <button class="accordion-button bg-transparent px-0 text-dark fw-bold shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreeLeft" aria-expanded="false" aria-controls="collapseThreeLeft">
+                                        Pon excepturi numquam, facilis?
+                                    </button>
+                                </h2>
+                                <div id="collapseThreeLeft" class="accordion-collapse collapse" aria-labelledby="headingThreeLeft" data-bs-parent="#faqLeft">
+                                    <div class="accordion-body px-0 text-muted">
+                                        I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <div class="accordion accordion-flush custom-accordion" id="faqRight">
+                            <!-- FAQ Item 1 Right -->
+                            <div class="accordion-item bg-transparent border-0 border-bottom mb-3 pb-2">
+                                <h2 class="accordion-header" id="headingOneRight">
+                                    <button class="accordion-button bg-transparent px-0 text-dark fw-bold shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneRight" aria-expanded="false" aria-controls="collapseOneRight">
+                                        Pon excepturi numquam, facilis?
+                                    </button>
+                                </h2>
+                                <div id="collapseOneRight" class="accordion-collapse collapse" aria-labelledby="headingOneRight" data-bs-parent="#faqRight">
+                                    <div class="accordion-body px-0 text-muted">
+                                        I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 2 Right -->
+                            <div class="accordion-item bg-transparent border-0 border-bottom mb-3 pb-2">
+                                <h2 class="accordion-header" id="headingTwoRight">
+                                    <button class="accordion-button bg-transparent px-0 text-dark fw-bold shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoRight" aria-expanded="false" aria-controls="collapseTwoRight">
+                                        Consequat nesciunt fusce facilisi?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwoRight" class="accordion-collapse collapse" aria-labelledby="headingTwoRight" data-bs-parent="#faqRight">
+                                    <div class="accordion-body px-0 text-muted">
+                                        I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 3 Right -->
+                            <div class="accordion-item bg-transparent border-0 border-bottom mb-3 pb-2">
+                                <h2 class="accordion-header" id="headingThreeRight">
+                                    <button class="accordion-button bg-transparent px-0 text-dark fw-bold shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreeRight" aria-expanded="false" aria-controls="collapseThreeRight">
+                                        Consequat nesciunt fusce facilisi?
+                                    </button>
+                                </h2>
+                                <div id="collapseThreeRight" class="accordion-collapse collapse" aria-labelledby="headingThreeRight" data-bs-parent="#faqRight">
+                                    <div class="accordion-body px-0 text-muted">
+                                        I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-dark text-white pt-5">
+            <div class="container">
+                <div class="row gy-4">
+        
+                    <!-- Brand -->
+                    <div class="col-lg-4">
+                        <a href="../index.html" class="d-inline-block mb-3 text-decoration-none">
+                            <!-- <img src="assets/images/organic-store-white-logo.png" alt="Organic Store" style="height:70px;"> -->
+                            <img src="../assets/images/organic-store-white-logo.png" alt="Organic Store" style="height:70px;">
+                        </a>
+        
+                        <p class="footer-desc mb-0">
+                            Maecenas mi justo,<br>
+                            interdum at consectetur<br>
+                            vel, tristique et arcu.
+                        </p>
+                    </div>
+        
+                    <!-- Website -->
+                    <div class="col-6 col-lg-2">
+                        <h6 class="footer-title mb-3">Website</h6>
+                        <ul class="list-unstyled footer-links mb-0">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Everything</a></li>
+                            <li><a href="#">Groceries</a></li>
+                            <li><a href="#">Juice</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Quick Links -->
+                    <div class="col-6 col-lg-3">
+                        <h6 class="footer-title mb-3">Quick Links</h6>
+                        <ul class="list-unstyled footer-links mb-0">
+                            <li><a href="#">Know More About Us</a></li>
+                            <li><a href="#">Visit Store</a></li>
+                            <li><a href="#">Let’s Connect</a></li>
+                            <li><a href="#">Locate Stores</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Site Links -->
+                    <div class="col-6 col-lg-3">
+                        <h6 class="footer-title mb-3">Site Links</h6>
+                        <ul class="list-unstyled footer-links mb-0">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Shipping Details</a></li>
+                            <li><a href="#">Offers Coupons</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+        
+                </div>
+        
+                <!-- Divider -->
+                <hr class="footer-divider my-5">
+        
+                <!-- Bottom bar -->
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-between pb-4 gap-3">
+                    <div class="small text-white-50">
+                        Copyright © 2026 | Organic Store
+                    </div>
+        
+                    <div class="d-flex align-items-center gap-3">
+                        <!-- استخدم Bootstrap Icons أو FontAwesome -->
+                        <a class="footer-social" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a class="footer-social" href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a class="footer-social" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+    
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="../bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

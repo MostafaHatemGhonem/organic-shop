@@ -43,6 +43,11 @@ html {
     scroll-behavior: smooth;
 }
 
+::selection {
+    background-color: #8bc34a;
+    color: #ffffff;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     color: var(--text-dark);

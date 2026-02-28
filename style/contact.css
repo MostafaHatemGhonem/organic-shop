@@ -1,0 +1,110 @@
+/* Contact Header Section */
+.contact-header {
+    background-color: #f8f6f3;
+    padding-top: 100px !important;
+    padding-bottom: 140px !important;
+}
+
+.contact-header h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+/* Contact Info Section */
+.contact-info-section {
+    background-color: #ffffff;
+    padding-bottom: 80px;
+}
+
+.contact-cards-wrapper {
+    position: relative;
+    margin-top: -80px;
+    z-index: 5;
+    border-radius: 4px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.04);
+}
+
+.leaf-icon-wrapper {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.leaf-img {
+    height: 40px;
+    object-fit: contain;
+}
+
+.contact-card {
+    border-color: #f0f0f0 !important;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    padding: 35px 20px !important;
+}
+
+.contact-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+
+.contact-icon {
+    color: #8bc34a; /* Primary green from logo */
+    font-size: 26px;
+    margin-bottom: 18px !important;
+}
+
+.contact-card p {
+    font-family: 'Inter', sans-serif;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* FAQ Section Styling */
+.faq-section {
+    background-color: #ffffff;
+}
+
+.faq-bg-image {
+    right: -5%;
+    bottom: -10%;
+    width: 400px;
+    height: auto;
+    pointer-events: none;
+    opacity: 0.08 !important; /* Very faint leaf */
+}
+
+/* Custom Accordion overrides */
+.custom-accordion .accordion-item {
+    border-bottom: 1px solid #eaeaea !important;
+}
+
+.custom-accordion .accordion-button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.custom-accordion .accordion-button:focus {
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button::after {
+    background-size: 12px;
+    filter: invert(0) grayscale(100%) brightness(0); /* Make sure icon is dark */
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: #1a1a1a;
+}
+
+.custom-accordion .accordion-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #777 !important;
+    padding-bottom: 1.5rem !important;
+}

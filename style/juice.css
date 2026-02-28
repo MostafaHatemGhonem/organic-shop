@@ -1,0 +1,278 @@
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    background-color: #f8f6f3;
+}
+
+
+
+.navbar-brand:hover .logo-icon {
+    transform: rotate(-8deg) scale(1.05);
+}
+
+
+.navbar-nav .nav-link {
+    color: var(--text-mid) !important;
+    transition: var(--transition);
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: var(--green-primary) !important;
+    font-weight: bold;
+}
+
+
+.btn-cart,
+.btn-user {
+    transition: all 0.3s ease !important;
+    cursor: pointer;
+}
+
+.btn-cart:hover,
+.btn-user:hover {
+    background-color: #6a9739 !important;
+    color: #fff !important;
+    transform: scale(1.1) rotate(5deg);
+}
+
+
+#navbarNav .nav-link.active {
+    color: #6a9739 !important;
+}
+
+
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-img-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.main-prod-img {
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .main-prod-img {
+    transform: scale(1.1);
+}
+
+
+
+
+.container-custom {
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+    margin: 0 auto;
+}
+
+
+.hero-section {
+    padding-left: 3rem;
+}
+
+#product-container {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 2.5rem;
+}
+
+
+.sidebar-container {
+    position: relative;
+}
+
+.sidebar-container::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50px;
+    bottom: 50px;
+    width: 1px;
+    background-color: #e5e5e5;
+}
+
+
+.main-prod-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+.sidebar-img-wrapper {
+    width: 85%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.sidebar-img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.sidebar-item {
+    text-align: center;
+}
+
+.sidebar-title {
+    color: #6a9739;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: block;
+}
+
+
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    z-index: 5;
+}
+
+.sale-badge-green {
+    background-color: #6a9739 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+
+.filter-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.range-slider-container {
+    position: relative;
+    height: 5px;
+    width: 100%;
+    background: #e5e5e5;
+    border-radius: 5px;
+}
+
+.custom-range-line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #6a9739;
+}
+
+.range-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #6a9739;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.price-input-box {
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    background: #fff;
+    font-size: 0.85rem;
+    min-width: 55px;
+}
+
+.price-label {
+    font-size: 0.7rem;
+    color: #999;
+}
+
+.extra-small {
+    font-size: 0.75rem;
+}
+
+@media (max-width: 991px) {
+    .container-custom {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .hero-section {
+        padding-left: 15px;
+    }
+
+    .sidebar-container ::after {
+        display: none;
+    }
+}
+
+.product-card {
+    transition: var(--transition);
+    border-radius: var(--radius-md);
+    padding: 10px;
+}
+
+.product-card:hover {
+    background: #fff;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+
+.product-img-wrapper {
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+}
+
+.main-prod-img {
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .main-prod-img {
+    transform: scale(1.1);
+}
+
+
+.product-card a:hover {
+    color: var(--green-primary) !important;
+}
+
+
+.sidebar-item {
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+
+.sidebar-item:hover {
+    transform: translateY(-8px);
+}
+
+
+.sidebar-img-wrapper {
+    overflow: hidden;
+}
+
+.sidebar-img {
+    transition: transform 0.6s ease;
+}
+
+.sidebar-item:hover .sidebar-img {
+    transform: scale(1.1);
+}
+
+
+.sidebar-item:hover .sidebar-title {
+    color: var(--green-primary);
+}
