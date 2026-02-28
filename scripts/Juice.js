@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.innerHTML = products
       .map(
         (p) => `
-            <div class="col-lg-4 col-md-6 col-6"> 
+            <div class="col-lg-4"> 
                 <div class="product-card mb-4 text-center">
                     <div class="product-img-wrapper position-relative">
                         ${p.sale ? '<span class="sale-badge sale-badge-green">Sale!</span>' : ""}

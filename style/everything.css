@@ -167,3 +167,29 @@ body { font-family: 'Lato', sans-serif; color: #333; background-color: #f8f6f3; 
 .sidebar-item:hover .sidebar-title {
     color: var(--green-primary);
 }
+
+
+/* Responsive Layout Grids for Products Container */
+@media (max-width: 1024px) {
+    #product-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    #product-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #product-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

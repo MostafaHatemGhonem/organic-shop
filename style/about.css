@@ -232,14 +232,21 @@ header img {
 }
 
 @media (max-width: 991px) {
+    .header { padding: 40px 0; }
+    .header h1 { font-size: 38px; }
+    
     .organic-container {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
     
     .content-box, .stats-wrapper {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
+
+    .about_intro { padding: 40px 0; }
 
     .stats-numbers {
         margin-top: 30px;
@@ -255,16 +262,29 @@ header img {
         height: 300px; 
     }
 
-    .checklist {
-        grid-template-columns: 1fr;
-        max-width: 250px;
-        margin-left: auto;
-        margin-right: auto;
+    /* Fix .info-box padding and text alignment on mobile */
+    .info-box {
+        text-align: center;
+        padding: 0 15px;
     }
 
     .badge-row {
         flex-direction: column;
         text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Center the checklist items */
+    .checklist {
+        grid-template-columns: 1fr;
+        max-width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left; /* Keep the actual text left aligned next to the checkmark */
+    }
+
+    .section-heading {
+        line-height: 1.3;
     }
 }
 
