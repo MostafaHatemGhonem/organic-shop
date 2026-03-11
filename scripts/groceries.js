@@ -1,4 +1,16 @@
 window.onload = function () {
+  let savedMin = localStorage.getItem("minPrice");
+  let savedMax = localStorage.getItem("maxPrice");
+
+  if (savedMin !== null) {
+    sliderOne.value = savedMin;
+    if (displayValOne) displayValOne.value = savedMin;
+  }
+  if (savedMax !== null) {
+    sliderTwo.value = savedMax;
+    if (displayValTwo) displayValTwo.value = savedMax;
+  }
+
   slideOne();
   slideTwo();
 };
@@ -17,6 +29,7 @@ function slideOne() {
   displayValOne.value = sliderOne.value;
   updateActiveFilterTag(); // Update the tag text dynamically
   fillColor();
+  localStorage.setItem("minPrice", sliderOne.value);
 }
 
 function slideTwo() {
@@ -25,6 +38,7 @@ function slideTwo() {
   }
   displayValTwo.value = sliderTwo.value;
   fillColor();
+  localStorage.setItem("maxPrice", sliderTwo.value);
 }
 
 function fillColor() {
